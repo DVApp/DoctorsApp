@@ -1,0 +1,27 @@
+<!-- <div class="row">
+
+<div class="col-lg-12" id="user-settings-table">
+
+<ul class="nav nav-tabs ">
+
+<li ng-repeat="tab in tabs " ng-class="{active:isActive('/app/pages/{{tab.pagename}}/')}" >
+<a href="{{tab.url}}" ng-bind="tab.pagename"></a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+<div class="tab-content" ui-view="parentcontent">
+</div> -->
+<div class="row" >
+	<div class="col-lg-12" id="user-settings-table">
+		<uib-tabset>
+			<uib-tab justified="true" ng-repeat="tab in tabs" heading="{{ tab.heading }}" active="tab.active">
+				<div ng-if="tab.active==true" ng-include="tab.template"></div>
+				
+			</uib-tab>
+		</uib-tabset>
+	</div>
+</div>

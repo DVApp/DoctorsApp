@@ -1,0 +1,38 @@
+<style type="text/css">
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 950px !important;
+}
+
+.ngdialog.ngdialog-theme-default {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+</style>
+<!-- <h2 style="color: #5b5b5b; font-size: 26px; font-weight: normal; margin-bottom: 15px; margin-left: 10px; margin-top: 15px;">Customise Inventory View</h2> -->
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Event Details</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <table class="table table-bordered events">
+        <tr>
+            <td><b>Event Name:</b></td>
+            <td>{{ eventData.title }}</td>
+        </tr>
+        <tr>
+            <td><b>Start Date:</b></td>
+            <td>{{ startdate | date:'dd MMM yyyy @ h:mma'}}</td>
+        </tr>
+        <tr>
+            <td><b>End Date:</b></td>
+            <td>{{ enddate | date:'dd MMM yyyy @ h:mma' }}</td>
+        </tr>
+        <tr>
+            <td><b>Description:</b></td>
+            <td>{{ eventData.des }}</td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="closeCustomPopup()">Cancel</button>
+</div>

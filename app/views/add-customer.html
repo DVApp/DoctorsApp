@@ -1,0 +1,412 @@
+<div class="row">
+	<div class="singleNav">
+		<p>
+			<a href="" ng-click="CustomerMngmt()">Customer Managment</a> ><label ng-if="!editID">Add Customer</label><label ng-if="editID">Edit Customer</label>
+		</p>
+	</div>
+</div>
+<div class="col-xs-12 panel panel-default traditional" ng-class="{ 'whirl': whirl == true }">
+	<h4>Add Customer</h4>
+	<form name="customerMangform"  novalidate="" class="form-validate form-horizontal">
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<legend>
+							Customer Details
+						</legend>
+						<div class="col-md-12">
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">First Name</label>
+								<div class="col-sm-7">
+									<input type="text" name="firstname" required="" ng-model="customer.firstname" class="form-control" />
+									<span ng-show="validateInput('firstname', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Last Name</label>
+								<div class="col-sm-7">
+									<input type="text" name="lastname" required="" ng-model="customer.lastname" class="form-control" />
+									<span ng-show="validateInput('lastname', 'required')" class="text-danger">This field is required</span>
+									
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Email</label>
+								<div class="col-sm-7">
+									<input type="email" name="useremail" required="" ng-model="customer.useremail" class="form-control" />
+									<span ng-show="validateInput('useremail', 'required')" class="text-danger">This field is required</span>
+									<span ng-show="validateInput('useremail', 'email')" class="text-danger">Enter valid email</span>
+								</div>
+
+							</div>
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Country</label>
+								<div class="col-sm-7">
+									<select name="country" required="" name="country" ng-model="customer.countrycode" class="form-control" ng-options="country.countrycode as country.countryname for country in MasterCountries">
+										<option id="" value="">--Select Country--</option>
+									</select>
+									<span ng-show="validateInput('country', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group col-md-6">
+								<div class="col-sm-offset-4 col-sm-10">
+									<div class="checkbox">
+										<label >
+											<input type="checkbox" ng-true-value="1"  ng-false-value="0"  value="1" name="vat" ng-model="customer.vatapplicable" >
+											Apply VAT</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group col-md-6" >
+								<label class="col-sm-4 control-label">Vat Percentage</label>
+								<div class="col-sm-7">
+									<input type="text" required="" name="vatpercentage" ng-model="customer.vatpercentage" class="form-control" >
+									<span ng-show="validateInput('vatpercentage', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+
+						</div>
+						<div class="col-md-12">
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Company Id</label>
+								<div class="col-sm-7">
+									<input type="text" name="companyid" required="" ng-model="customer.companyid" class="form-control" />
+									<span ng-show="validateInput('companyid', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Company Name</label>
+								<div class="col-sm-7">
+									<input type="text" name="companyname" required="" ng-model="customer.companyname" class="form-control" />
+									<span ng-show="validateInput('companyname', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Telephone</label>
+								<div class="col-sm-7">
+									<input type="text" name="phone" required="" ng-model="customer.telephone" class="form-control" />
+
+									<span ng-show="validateInput('phone', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Address1</label>
+								<div class="col-sm-7">
+									<textarea name="addressline1" required="" ng-model="customer.addressline1" class="form-control" ></textarea>
+									<span ng-show="validateInput('addressline1', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Address2</label>
+								<div class="col-sm-7">
+									<textarea name="addressline2" required="" ng-model="customer.addressline2" class="form-control" ></textarea>
+									<span ng-show="validateInput('addressline2', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">City</label>
+								<div class="col-sm-7">
+									<input type="text" name="city" required="" ng-model="customer.city" class="form-control" />
+									<span ng-show="validateInput('city', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Region</label>
+								<div class="col-sm-7">
+									<input type="text" name="stateorregion" required="" ng-model="customer.stateorregion" class="form-control" />
+									<span ng-show="validateInput('stateorregion', 'required')" class="text-danger">This field is required</span>
+								</div>
+
+							</div>
+							<div class="form-group col-md-6">
+								<label class="col-sm-4 control-label">Postal Code</label>
+								<div class="col-sm-7">
+									<input type="text" name="postalcode" required="" ng-model="customer.postalcode" class="form-control" />
+									<span ng-show="validateInput('postalcode', 'required')" class="text-danger">This field is required</span>
+									
+								</div>
+
+							</div>
+
+						</div>
+						<!-- <div class="col-md-12">
+						<div class="form-group col-md-6">
+						<label class="col-sm-4 control-label">Vat </label>
+						<div class="col-sm-7">
+						<input type="text"  name="vat" ng-model="customer.vat" class="form-control" >
+
+						</div>
+
+						</div>
+						</div> -->
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+
+						<legend>
+							Server Details
+						</legend>
+
+						<div class="col-xs-12">
+							<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">DB Name</label>
+									<div class="col-sm-7">
+										<input type="text" name="dbname" required="" ng-model="customer.dbname" class="form-control" />
+										<span ng-show="validateInput('dbname', 'required')" class="text-danger">This field is required</span>
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">SellerDB</label>
+									<div class="col-sm-7">
+										<select name="sellerdb" required="" ng-model="customer.sellerdbcode" ng-options="seller.dbcode as seller.servername for seller in SellerDBCodes" class="form-control">
+											<option id="" value="">--Select SellerDB--</option>
+										</select>
+										<span ng-show="validateInput('sellerdb', 'required')" class="text-danger">This field is required</span>
+									</div>
+
+								</div>
+
+							</div>
+							<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">MySqlDB</label>
+									<div class="col-sm-7">
+										<select name="sqldb" required="" ng-model="customer.mysqldbcode" ng-options="mysql.dbcode as mysql.servername for mysql in MySQLDBCodes" class="form-control">
+											<option id="" value="">--Select MySqlDB--</option>
+										</select>
+										<span ng-show="validateInput('sqldb', 'required')" class="text-danger">This field is required</span>
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">CommonDB</label>
+									<div class="col-sm-7">
+										<select name="commondb" required="" ng-model="customer.commondbcode" ng-options="common.dbcode as common.servername for common in CommonDBCodes" class="form-control">
+											<option id="" value="">--Select CommonDB--</option>
+										</select>
+										<span ng-show="validateInput('commondb', 'required')" class="text-danger">This field is required</span>
+									</div>
+
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">CourierDB</label>
+									<div class="col-sm-7">
+										<select name="courierdb" required="" ng-model="customer.courierdbcode" ng-options="courier.dbcode as courier.servername for courier in CourierDBCodes" class="form-control">
+											<option id="" value="">--Select CourierDB--</option>
+										</select>
+										<span ng-show="validateInput('courierdb', 'required')" class="text-danger">This field is required</span>
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">AmazonDB</label>
+									<div class="col-sm-7">
+										<select name="courierdb" ng-model="customer.amazondbcode" ng-options="amazon.dbcode as amazon.servername for amazon in AmazonDBCodes" class="form-control">
+											<option id="" value="">--Select AmmazonDB--</option>
+										</select>
+
+									</div>
+
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">EbayDB</label>
+									<div class="col-sm-7">
+										<select name="courierdb" ng-model="customer.ebaydbcode" ng-options="ebay.dbcode as ebay.servername for ebay in EbayDBCodes" class="form-control">
+											<option id="" value="">--Select EbayDB--</option>
+										</select>
+
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">WebStoreDB</label>
+									<div class="col-sm-7">
+										<select name="courierdb" ng-model="customer.webstoredbcode" ng-options="webstore.dbcode as webstore.servername for webstore in WebStoreDBCodes" class="form-control">
+											<option id="" value="">--Select WebStoreDB--</option>
+										</select>
+
+									</div>
+
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">FNACDB</label>
+									<div class="col-sm-7">
+										<select name="courierdb" ng-model="customer.fnacdbcode" ng-options="fnac.dbcode as fnac.servername for fnac in FNACDBCodes" class="form-control">
+											<option id="" value="">--Select FNACDB--</option>
+										</select>
+
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">RakutenDB</label>
+									<div class="col-sm-7">
+										<select name="courierdb" ng-model="customer.rakutendbcode" ng-options="rakuten.dbcode as rakuten.servername for rakuten in RakutenDBCodes" class="form-control">
+											<option id="" value="">--Select RakutenDB--</option>
+										</select>
+
+									</div>
+
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">CDiscountDB</label>
+									<div class="col-sm-7">
+										<select name="courierdb" ng-model="customer.cdiscountdbcode" ng-options="cdiscount.dbcode as cdiscount.servername for cdiscount in CDiscountDBCodes" class="form-control">
+											<option id="" value="">--Select CDiscountDB--</option>
+										</select>
+
+									</div>
+
+								</div>
+
+								<div class="form-group col-md-6">
+									<label class="col-sm-4 control-label">TradeMe</label>
+									<div class="col-sm-7">
+										<select name="courierdb" ng-model="customer.trademedbcode" ng-options="tradme.dbcode as tradme.servername for tradme in TradeMeDBCodes" class="form-control">
+											<option id="" value="">--Select TradeMe--</option>
+										</select>
+
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+
+						<legend>
+							Price Sub
+						</legend>
+
+						<div class="col-xs-12">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Invoice Type</label>
+									<div class="col-sm-6">
+										<select name="invoiceetype" required="" ng-model="customer.invoicetypecode" ng-options="invoicetypes.invoicetypecode as invoicetypes.invoicetypename for invoicetypes in MasterInvocetypes" class="form-control">
+											<option id="" value="">--Select Invoice Type--</option>
+										</select>
+										<span ng-show="validateInput('invoiceetype', 'required')"  class="text-danger">This field is required</span>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Fixed Price</label>
+									<div class="col-sm-6">
+										<input type="text" name="fixedprice" required=""  ng-model="customer.fixedprice" class="form-control" />
+										<span ng-show="validateInput('fixedprice', 'required')" class="text-danger">This field is required</span>
+										<!-- <span ng-show="validateInput('fixedprice', 'pattern')" class="text-danger">This field must contain only Numbers</span> -->
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<div class="pull-right">
+								<input type="button" class="mb-sm btn btn-success" ng-click="AddRow()" value="Add">
+
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Fee %</th>
+										<th>From Range</th>
+										<th>To Range</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="invoice in customer.invoices">
+										<td>
+										<input type="text" required="" ng-change="onChangeText('{{invoice.fee}}__{{$index}}')" name="{{$index}}_calculationfactor" required="" ng-model="invoice.calculationfactor" id="{{$index}}_fee" class="form-control" />
+										<span ng-show="validateInput('{{$index}}_calculationfactor', 'required')" class="text-danger">This field is required</span>
+										</td>
+										<td>
+										<input type="text" ng-change="onChangeText('{{invoice.fromrange}}__{{$index}}')" name="{{$index}}_fromrange" required="" ng-model="invoice.fromrange" name="{{$index}}_fromrange" id="{{$index}}_fromrange" class="form-control" />
+										<span ng-show="validateInput('{{$index}}_fromrange', 'required')" class="text-danger">This field is required</span>
+										</td>
+										<td>
+										<input type="text" ng-change="onChangeText('{{invoice.fromrange}}__{{$index}}')" name="{{$index}}_torange" required="" ng-model="invoice.torange" value="{{$index}}_torange" id="{{$index}}_torange" class="form-control" />
+										<span ng-show="validateInput('{{$index}}_torange', 'required')" class="text-danger">This field is required</span>
+										</td>
+										<td>
+											<button class="btn btn-danger" ng-if="customer.invoices.length>1" ng-click="deleteinvoices($index);" type="submit">
+					Delete
+				</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-12 text-center">
+				<button type="submit" ng-click="SaveCustomer()" class="btn btn-info">
+					Save
+				</button>
+				<button type="submit" ng-click="Cancel();" class="btn btn-danger">
+					Cancel
+				</button>
+			</div>
+		</div>
+
+	</form>
+</div>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title data-ng-bind="pageTitle()">Doctor App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" type="text/css" id="theme" href="styles/theme-blue.css">
+    <link rel="stylesheet" type="text/css" id="theme" href="styles/animate.css">
+    <link rel="stylesheet" type="text/css" id="theme" href="styles/custom.css">
+    <!-- endbuild -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css" rel="stylesheet" data-semver="1.6.1" data-require="fullcalendar@1.6.1" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="DoctorsApp">
+    <div class="page-container">
+        <div data-ui-view="content"></div>
+    </div>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+    ! function(A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                (A[l].q = A[l].q || []).push(arguments)
+            }, A[l].l = +new Date, a = n.createElement(g),
+            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/appcontroller.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/admin.js"></script>
+    <script src="scripts/controllers/patient.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/services/loginService.js"></script>
+    <script src="scripts/services/httpservice.js"></script>
+    <script src="scripts/services/eventservice.js"></script>
+    <script src="scripts/directives/customdirective.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/external.js -->
+    <script src="scripts/vendor/parsleyjs/dist/parsley.min.js"></script>
+    <script type="text/javascript" src="scripts/externals/plugins/jquery/jquery-ui.min.js"></script>
+     <script type='text/javascript' src='scripts/externals/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="scripts/externals/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="scripts/externals/calendar.js"></script>
+    <script type="text/javascript" src="scripts/externals/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="scripts/externals/plugins/bootstrap/bootstrap-select.js"></script>
+    <!-- endbuild -->
+    <!--  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+
+    
+</body>
+
+</html>

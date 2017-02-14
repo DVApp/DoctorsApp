@@ -1,0 +1,158 @@
+﻿.form-validate .form-control.ng-dirty.ng-invalid {
+  border-color: #f05050;
+}
+.form-validate .form-control.ng-dirty.ng-valid,
+.form-validate .form-control.ng-dirty.ng-valid:focus {
+  border-color: #27c24c;
+}
+.form-validate .has-error .form-control {
+  border-color: #f05050 !important;
+}
+.form-validate .c-checkbox input.ng-dirty.ng-invalid + span,
+.form-validate .c-radio input.ng-dirty.ng-invalid + span {
+  border-color: #f05050;
+}
+.form-validate .ui-select-container.ng-dirty.ng-invalid .btn {
+  border-color: #f05050;
+}
+.form-validate .input-group .ui-select-container.ng-dirty.ng-invalid .btn {
+  margin-left: -1px;
+}
+.form-validate .chosen-select.ng-dirty.ng-invalid + .chosen-container > .chosen-choices {
+  border-color: #f05050;
+}
+.form-validate .chosen-select.ng-dirty.ng-valid + .chosen-container > .chosen-choices,
+.form-validate .chosen-select.ng-dirty.ng-valid:focus + .chosen-container > .chosen-choices {
+  border-color: #27c24c;
+}
+.form-validate .form-control.ng-dirty.ng-invalid + .bootstrap-tagsinput {
+  border-color: #f05050;
+}
+.form-validate .form-control.ng-dirty.ng-valid + .bootstrap-tagsinput,
+.form-validate .form-control.ng-dirty.ng-valid:focus + .bootstrap-tagsinput {
+  border-color: #27c24c;
+}
+.parsley-error {
+  border-color: #f05050 !important;
+}
+.parsley-errors-list {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+.parsley-errors-list.filled {
+  display: block;
+}
+.parsley-errors-list > li {
+  font-size: 12px;
+  list-style: none;
+  color: #f05050;
+}
+.mar-top-15 {
+    margin-top: 15px;
+}
+
+.mar-top-bottom-15 {
+    margin: 15px 0;
+}
+
+.mar-left-right-0 {
+    margin: 0px !important;
+}
+
+.font-normal {
+    font-weight: normal !important;
+}
+
+.mar-top-5 {
+    margin-top: 5px !important;
+}
+.mar-top-10 {
+    margin-top: 10px !important;
+}
+
+.mar-top-15 {
+    margin-top: 15px !important;
+}
+
+.mar-top-20 {
+    margin-top: 20px !important;
+}
+
+.mar-top-30 {
+    margin-top: 30px !important;
+}
+
+.mar-top-40 {
+    margin-top: 40px !important;
+}
+
+.mar-bottom-10 {
+    margin-bottom: 10px !important;
+}
+
+.mar-bottom-20 {
+    margin-bottom: 20px !important;
+}
+
+.mar-bottom-30 {
+    margin-bottom: 30px !important;
+}
+
+.mar-bottom-40 {
+    margin-bottom: 40px !important;
+}
+.mar-bottom-60 {
+    margin-bottom: 60px !important;
+    background-color: transparent;
+}
+.mar-bottom-90 {
+    margin-bottom: 90px !important;
+    background-color: transparent;
+}
+
+.mar-top-60 {
+    margin-top: 60px !important;
+}
+
+.mar-top-90 {
+    margin-top: 90px !important;
+}
+
+.mar-left-10 {
+    margin-left: 10px !important;
+}
+
+.mar-left-20 {
+    margin-left: 20px !important;
+}
+
+.mar-left-30 {
+    margin-left: 30px !important;
+}
+
+.mar-left-40 {
+    margin-left: 40px !important;
+}
+
+.mar-right-10 {
+    margin-right: 10px !important;
+}
+
+.mar-right-20 {
+    margin-right: 20px !important;
+}
+
+.mar-right-30 {
+    margin-right: 30px !important;
+}
+
+.mar-right-40 {
+    margin-right: 40px !important;
+}
+.alert{
+   line-height: 0px;
+}
+.x-navigation li > ul li.active > a{
+  background: #606d78 none repeat scroll 0 0 !important;
+}

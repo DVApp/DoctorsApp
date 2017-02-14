@@ -1,0 +1,148 @@
+<div class="row mar-top-20">
+    <div class="col-md-12">
+        <form ng-submit="SaveUser(doctor)" class="form-horizontal" name="doctor">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Create Doctor</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">First Name</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="fname" ng-model="doctor.firstName" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Gender</label>
+                                <div class="col-md-9 ">
+                                    <label class="check">
+                                        <input type="radio" class="iradio" name="gender" value="1" ng-model="doctor.gender" /> Male</label>
+                                    <label class="check">
+                                        <input type="radio" class="iradio" name="gender" value="2" ng-model="doctor.gender" /> Female</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Email</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-at"></span></span>
+                                        <input type="text" class="form-control" name="fname" ng-model="doctor.email" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">User Name</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                        <input type="text" name="uname" class="form-control" ng-model="doctor.username" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">DOB</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                        <input type="text" bootstrapdatepicker name="date" class="form-control datepicker" ng-model="doctor.dob" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Present Address</label>
+                                <div class="col-md-9 col-xs-12">
+                                    <textarea class="form-control" style="resize: none" ng-model="doctor.paddress" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Role</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-user-md"></span></span>
+                                        <select ng-model="doctor.role" bootselectpicker class="form-control">
+                                            <option selected="">Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                            <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Last Name</label>
+                                <div class="col-md-9 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="lname" ng-model="doctor.lasttName" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Specialization</label>
+                                <div class="col-md-9">
+                                    <select ng-model="doctor.specialization" bootselectpicker multiple="" class="form-control multiple">
+                                        <option selected="">Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                        <option>Option 4</option>
+                                        <option>Option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Mobile</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-mobile"></span></span>
+                                        <input type="text" class="form-control" name="fname" ng-model="doctor.mobile" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Password</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-lock"></span></span>
+                                        <input type="password" name="pwd" class="form-control" ng-model="doctor.password" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Telephone</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-phone"></span></span>
+                                        <input type="text" class="form-control" name="fname" ng-model="doctor.phone" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Experience</label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-stethoscope"></span></span>
+                                        <input type="text" name="date" class="form-control" ng-model="doctor.experience" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-info pull-right">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <script type="text/javascript">
+     $(".datepicker").datepicker({format: 'yyyy-mm-dd'});             
+</script> -->

@@ -1,0 +1,77 @@
+<div class="row">
+	<div class="singleNav">
+		<p>
+			<a href="" ng-click="UserMngmt()">Users Managment</a> > Add User
+		</p>
+	</div>
+</div>
+<div class="col-xs-12 panel panel-default">
+	<h4>Add User</h4>
+	<form name="AddUserForm"  novalidate="" class="form-validate form-horizontal">
+
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="panel panel-default traditional" ng-class="{ 'whirl': whirl == true }">
+					<div class="panel-body">
+						<legend>
+							User Details
+						</legend>
+						<div class="form-group ">
+							<label class="col-sm-4 control-label">First Name</label>
+							<div class="col-sm-7">
+								<input type="text" name="firstname" required="" ng-model="user.firstname" class="form-control" />
+								<span ng-show="validateInput('firstname', 'required')" class="text-danger">This field is required</span>
+							</div>
+
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-4 control-label">Last Name</label>
+							<div class="col-sm-7">
+								<input type="text" name="lastname" required="" ng-model="user.lastname" class="form-control" />
+								<span ng-show="validateInput('lastname', 'required')" class="text-danger">This field is required</span>
+							</div>
+
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-4 control-label">User Name(email)</label>
+							<div class="col-sm-7">
+								<input type="email" name="username" required="" ng-model="user.username" class="form-control" />
+								<span ng-show="validateInput('username', 'required')" class="text-danger">This field is required</span>
+							</div>
+
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-4 control-label">Passwod</label>
+							<div class="col-sm-7">
+								<input type="password" name="userpasswrd" required="" ng-model="user.password" class="form-control" />
+								<span ng-show="validateInput('userpasswrd', 'required')" class="text-danger">This field is required</span>
+							</div>
+
+						</div>
+						<div class="form-group ">
+							<label class="col-sm-4 control-label">Pages</label>
+							<div class="col-sm-7">
+								<select multiple="" name="pages" required="" name="country" ng-model="user.pagecode" class="form-control" ng-options="page.pagecode as page.pagename for page in pages">
+									<option id="" value="">--Select Pages--</option>
+								</select>
+								<span ng-show="validateInput('pages', 'required')" class="text-danger">This field is required</span>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<div class="col-lg-11 text-right">
+								<button type="submit" ng-click="SaveUser()" class="btn btn-info">
+									Save
+								</button>
+								<button type="submit" ng-click="Cancel();" class="btn btn-danger">
+									Cancel
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
