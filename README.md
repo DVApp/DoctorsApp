@@ -4,7 +4,7 @@ This project is generated with [yo angular generator](https://github.com/yeoman/
 version 0.12.1.
 
 ## Project Setup
-First Clone the project using the git command 
+First Clone the project using the git command <br/>
   git clone "project git path"
   
 ## To run applicatopn
