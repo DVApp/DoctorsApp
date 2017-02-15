@@ -5,7 +5,7 @@ version 0.12.1.
 
 ## Project Setup
 First Clone the project using the git command 
-  git clone "projet git path"
+  git clone "project git path"
   
 ## To run applicatopn
  1.go to your project and run npm install and bower install <br/>
