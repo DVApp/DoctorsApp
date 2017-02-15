@@ -8,5 +8,5 @@ First Clone the project using the git command
   git clone "projet git path"
   
 ## To run applicatopn
- 1.go to your project and run npm install and bower install;
+ 1.go to your project and run npm install and bower install <br/>
  2.grunt serve(ruinning application)
