@@ -23,7 +23,7 @@ App.config(['$stateProvider', '$urlRouterProvider', '$filterProvider', '$routePr
        // $httpProvider.defaults.useXDomain = true;
 
         // defaults to dashboard
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/app/dashboard');
         //
         // Application Routes
         // -----------------------------------
@@ -78,11 +78,11 @@ App.config(['$stateProvider', '$urlRouterProvider', '$filterProvider', '$routePr
 App.run(["$rootScope", "$state", "$cookieStore", "$stateParams", '$window', 'LoginService', '$location', '$filter', '$http', '$timeout',
     function($rootScope, $state, $cookieStore, $stateParams, $window, LoginService, $location, $filter, $http, $timeout) {
         //cfpLoadingBar.start();
-        $rootScope.pagetab = "";
+        
         $rootScope.app = {
             name: 'DoctorsApp',
             description: 'All Rights Reserved.',
-            year: '2016 - ' + (new Date()).getFullYear() + ',',
+            year: '2016 - ' + (new Date()).getFullYear() + ' |',
             layout: {
                 isFixed: true,
                 isCollapsed: false,
@@ -100,7 +100,7 @@ App.run(["$rootScope", "$state", "$cookieStore", "$stateParams", '$window', 'Log
             } else {
                 $cookieStore.put('loggedinauth', '');
             }
-            var result = LoginService.checkLogin();
+            //var result = LoginService.checkLogin();
 
             if ($location.path() === '/login' || $location.path() === '/') {
 
