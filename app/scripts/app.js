@@ -10,8 +10,8 @@
  */
 var App = angular.module('DoctorsApp', ['ui.router', 'ngRoute', 'ui.calendar', 'ui.bootstrap', 'ngCookies']);
 App.constant('urls', {
-    LOCAL_API: '192.168.0.2:8686',
-    SERVER_API: 'compete.247commerce.com'
+    LOCAL_API: '192.168.0.29:8686',
+    SERVER_API: ''
 })
 App.config(['$stateProvider', '$urlRouterProvider', '$filterProvider', '$routeProvider', '$httpProvider',
     function($stateProvider, $urlRouterProvider, $filterProvider, $routeProvider, $httpProvider) {
@@ -20,7 +20,7 @@ App.config(['$stateProvider', '$urlRouterProvider', '$filterProvider', '$routePr
 
         //$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
         //$httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';
-       // $httpProvider.defaults.useXDomain = true;
+        // $httpProvider.defaults.useXDomain = true;
 
         // defaults to dashboard
         $urlRouterProvider.otherwise('/app/dashboard');
@@ -75,10 +75,13 @@ App.config(['$stateProvider', '$urlRouterProvider', '$filterProvider', '$routePr
         })
     }
 ]);
+App.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+}])
 App.run(["$rootScope", "$state", "$cookieStore", "$stateParams", '$window', 'LoginService', '$location', '$filter', '$http', '$timeout',
     function($rootScope, $state, $cookieStore, $stateParams, $window, LoginService, $location, $filter, $http, $timeout) {
         //cfpLoadingBar.start();
-        
+
         $rootScope.app = {
             name: 'DoctorsApp',
             description: 'All Rights Reserved.',

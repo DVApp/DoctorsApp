@@ -1,0 +1,51 @@
+<style type="text/css">
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 950px !important;
+}
+
+.ngdialog.ngdialog-theme-default {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+</style>
+<!-- <h2 style="color: #5b5b5b; font-size: 26px; font-weight: normal; margin-bottom: 15px; margin-left: 10px; margin-top: 15px;">Customise Inventory View</h2> -->
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Create Event</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">Event Name</label>
+            <div class="col-md-8 col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                    <input type="text" class="form-control" ng-model="event.EventName" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">Event Description</label>
+            <div class="col-md-8 col-xs-12">
+                <textarea class="form-control" rows="5" ng-model="event.EventDescription"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label mar-top-30">Event Date</label>
+            <div class="col-md-5 col-xs-12">
+                <div class="input-group mar-top-30">
+                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                    <input type="text" bootstrapdatepicker name="date" class="form-control datepicker" ng-model="event.StartDate" value="">
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div uib-timepicker ng-model="event.evntTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+            </div>
+
+        </div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="addEvent(event)">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="closeCustomPopup()">Cancel</button>
+</div>

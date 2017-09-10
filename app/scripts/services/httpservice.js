@@ -47,9 +47,9 @@ App.service('httpService', function($q, $http, $cookies, $cookieStore, $state, $
                     'Content-Type': 'application/json'
 
                 }
-            }).success(function(user) {
-                deffered.resolve(user);
-            }).error(function(error, code) {
+            }).then(function(user) {
+                deffered.resolve(user.data);
+            }, function(error, code) {
                 deffered.reject(error, code);
                 $state.go('login')
 

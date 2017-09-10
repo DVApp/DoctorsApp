@@ -21,7 +21,7 @@ App.directive("bootselectpicker", function($timeout) {
 });
 App.directive('bootstrapdatepicker', function() {
     return {
-    	restrict: "AE",
+        restrict: "AE",
         require: 'ngModel',
         link: function(scope, el, attr, ngModel) {
             $(el).datepicker({
@@ -39,3 +39,4 @@ App.directive('bootstrapdatepicker', function() {
         }
     };
 })
+
