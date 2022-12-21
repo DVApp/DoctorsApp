@@ -7,7 +7,7 @@
  * # AppController
  * Controller of the DoctorsApp
  */
-App.controller('AppController', ['$scope', '$state', '$rootScope','LoginService','$cookieStore', function($scope, $state, $rootScope, LoginService,$cookieStore) {
+App.controller('AppController', ['$scope', '$state', '$rootScope','LoginService','$cookies', function($scope, $state, $rootScope, LoginService,$cookies) {
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         // display new view from top

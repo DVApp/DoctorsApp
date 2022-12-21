@@ -7,7 +7,7 @@
  * # LoginService
  * Service in the adminApp.
  */
-App.service('LoginService', function($q, $http, $timeout, $location, httpService, $cookieStore, $cookies, $state) {
+App.service('LoginService', function($q, $http, $timeout, $location, httpService, $cookies, $state) {
     var loginData = null;
     var AuthData = null
 
@@ -22,7 +22,7 @@ App.service('LoginService', function($q, $http, $timeout, $location, httpService
             return request;
         },
         islogedin: function() {
-            var $request = $cookieStore.get('IsAuth');
+            var $request = $cookies.get('IsAuth');
             return $request;
         },
         getLoginData: function() {
@@ -32,12 +32,12 @@ App.service('LoginService', function($q, $http, $timeout, $location, httpService
             return loginData;
         },
         logout: function() {
-            $cookieStore.remove('IsAuth');
-            $cookieStore.remove('loggedinauth');
+            $cookies.remove('IsAuth');
+            $cookies.remove('loggedinauth');
 
         },
         checkLogin: function() {
-            var loggedIn = $cookieStore.get('loggedinauth');
+            var loggedIn = $cookies.get('loggedinauth');
             return loggedIn;
         }
     };

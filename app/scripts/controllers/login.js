@@ -7,7 +7,7 @@
  * # loginController
  * Controller of the DoctorApp
  */
-App.controller('loginController', ['$scope', '$state', '$rootScope', '$cookieStore', 'LoginService', '$http', function($scope, $state, $rootScope, $cookieStore, LoginService, $http) {
+App.controller('loginController', ['$scope', '$state', '$rootScope', '$cookies', 'LoginService', '$http', function($scope, $state, $rootScope, $cookies, LoginService, $http) {
 
     $scope.login = function(user) {
         // var doc = new jsPDF();
@@ -17,7 +17,7 @@ App.controller('loginController', ['$scope', '$state', '$rootScope', '$cookieSto
         // }, function() {
         //     doc.save('sample-file.pdf');
         // });
-        $cookieStore.remove('loggedinauth');
+        $cookies.remove('loggedinauth');
 
         LoginService.login(user).then(function(response) {
 
@@ -25,8 +25,8 @@ App.controller('loginController', ['$scope', '$state', '$rootScope', '$cookieSto
 
             if (response.statuscode == 0) {
 
-                $cookieStore.put('loggedinauth', 'true');
-                $cookieStore.put('IsAuth', btoa(response.data[0].Session));
+                $cookies.put('loggedinauth', 'true');
+                $cookies.put('IsAuth', btoa(response.data[0].Session));
 
                 $state.go('app.dashboard');
 

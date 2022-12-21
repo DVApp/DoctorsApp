@@ -116,6 +116,7 @@ App.controller('dashboardController', ['$scope', '$stateParams', '$state', '$roo
                 }
             });
             modalInstance.result.then(function(data) {
+                $scope.events=[];
                 $scope.loadEvents();
             });
         }
@@ -153,8 +154,8 @@ App.controller('createeventpopupCtrl', ['$scope', 'items', '$modalInstance', '$h
 
             evnt.CreatedBy = 1;
             evnt.ModifiedBy = 1;
-            evnt.CreatedDate = new Date()
-            evnt.ModifiedDate = new Date()
+            evnt.CreatedDate = $filter('date')(new Date(), 'yyyy-MM-dd')
+            evnt.ModifiedDate = $filter('date')(new Date(), 'yyyy-MM-dd')
             $scope.time = $filter('date')(evnt.evntTime, 'HH:mm')
             evnt.StartDate = evnt.StartDate + " " + $scope.time;
             evnt.EndDate = evnt.StartDate;
@@ -162,7 +163,7 @@ App.controller('createeventpopupCtrl', ['$scope', 'items', '$modalInstance', '$h
                 console.log(evnt)
                 $modalInstance.close()
             });
-            console.log(evnt)
+            
         }
         $scope.hstep = 1;
         $scope.mstep = 15;

@@ -7,7 +7,7 @@
  * # eventService
  * Service in the adminApp.
  */
-App.service('eventService', function($q, $http, $timeout, $location, httpService, $cookieStore, $cookies, $state) {
+App.service('eventService', function($q, $http, $timeout, $location, httpService, $cookies, $state) {
 
     return {
         GetEventsList: function(credentials) {

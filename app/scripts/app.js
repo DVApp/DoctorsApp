@@ -10,7 +10,7 @@
  */
 var App = angular.module('DoctorsApp', ['ui.router', 'ngRoute', 'ui.calendar', 'ui.bootstrap', 'ngCookies']);
 App.constant('urls', {
-    LOCAL_API: '192.168.0.29:8686',
+    LOCAL_API: 'localhost:8686',
     SERVER_API: ''
 })
 App.config(['$stateProvider', '$urlRouterProvider', '$filterProvider', '$routeProvider', '$httpProvider',
@@ -78,8 +78,8 @@ App.config(['$stateProvider', '$urlRouterProvider', '$filterProvider', '$routePr
 App.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');
 }])
-App.run(["$rootScope", "$state", "$cookieStore", "$stateParams", '$window', 'LoginService', '$location', '$filter', '$http', '$timeout',
-    function($rootScope, $state, $cookieStore, $stateParams, $window, LoginService, $location, $filter, $http, $timeout) {
+App.run(["$rootScope", "$state", "$cookies", "$stateParams", '$window', 'LoginService', '$location', '$filter', '$http', '$timeout',
+    function($rootScope, $state, $cookies, $stateParams, $window, LoginService, $location, $filter, $http, $timeout) {
         //cfpLoadingBar.start();
 
         $rootScope.app = {
@@ -99,22 +99,22 @@ App.run(["$rootScope", "$state", "$cookieStore", "$stateParams", '$window', 'Log
             var islogedin = LoginService.islogedin();
 
             if (islogedin) {
-                $cookieStore.put('loggedinauth', 'true');
+                $cookies.put('loggedinauth', 'true');
             } else {
-                $cookieStore.put('loggedinauth', '');
+                $cookies.put('loggedinauth', '');
             }
             //var result = LoginService.checkLogin();
 
             if ($location.path() === '/login' || $location.path() === '/') {
 
-                if ($cookieStore.get('loggedinauth')) {
+                if ($cookies.get('loggedinauth')) {
                     event.preventDefault();
                     $state.go('app.dashboard');
                 }
                 return;
             }
 
-            if (!$cookieStore.get('loggedinauth')) {
+            if (!$cookies.get('loggedinauth')) {
                 event.preventDefault();
                 $state.go('login');
                 return

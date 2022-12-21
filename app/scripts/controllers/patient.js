@@ -7,7 +7,7 @@
  * # patientController
  * Controller of the DoctorApp
  */
-App.controller('addPatientController', ['$scope', '$state', '$rootScope', '$cookieStore', '$http', function($scope, $state, $rootScope, $cookieStore, $http) {
+App.controller('addPatientController', ['$scope', '$state', '$rootScope', '$cookies', '$http', function($scope, $state, $rootScope, $cookies, $http) {
 
 
 }]);

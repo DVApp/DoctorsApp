@@ -7,7 +7,7 @@
  * # httpService
  * Service in the adminApp.
  */
-App.service('httpService', function($q, $http, $cookies, $cookieStore, $state, $log, urls) {
+App.service('httpService', function($q, $http, $cookies, $state, $log, urls) {
     var serializeData = function(data) {
         // If this is not an object, defer to native stringification.
         if (!angular.isObject(data)) {
